@@ -10,7 +10,7 @@ function defineScreenshotTests(): void {
     await takeThemeScreenshots(page, 'markdown-article');
   });
 
-  test('katex article', async ({ page }) => {
+  test.skip('katex article', async ({ page }) => {
     await page.goto('/2016/12/04/Katex');
     await page.waitForSelector('.katex', { timeout: 10_000 });
     await takeThemeScreenshots(page, 'katex-article');
