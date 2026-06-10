@@ -9,6 +9,8 @@ interface SiteConfig {
   author: string;
   /** Author profile URL (used in structured data) */
   profile?: string;
+  /** Centralized About page URL */
+  aboutUrl?: string;
   /** Fallback OG image filename in /public, e.g. "og.jpg" */
   ogImage?: string;
   /** HTML lang attribute, defaults to "en" */
@@ -19,6 +21,13 @@ interface SiteConfig {
   dir?: "ltr" | "rtl" | "auto";
   /** Google Search Console verification meta tag value */
   googleVerification?: string;
+}
+
+interface LogoConfig {
+  /** Logo URL for light mode */
+  light: string;
+  /** Logo URL for dark mode */
+  dark: string;
 }
 
 interface PostsConfig {
@@ -96,6 +105,8 @@ interface AstroPaperConfig {
   site: SiteConfig;
   posts?: PostsConfig;
   features?: FeaturesConfig;
+  /** Logo configuration for light and dark modes */
+  logo?: LogoConfig;
   /** Social profile links shown in header/footer */
   socials?: SocialLink[];
   /** Share links shown on post detail pages */
@@ -121,6 +132,7 @@ export interface ResolvedAstroPaperConfig {
   site: ResolvedSiteConfig;
   posts: Required<PostsConfig>;
   features: Required<FeaturesConfig>;
+  logo?: LogoConfig;
   socials: SocialLink[];
   shareLinks: ShareLink[];
 }

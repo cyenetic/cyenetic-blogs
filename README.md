@@ -1,35 +1,32 @@
-# AstroPaper 📄
+# Cyenetic Security Blog 🔒
 
-![AstroPaper](public/default-og.jpg)
-[![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/community/file/1356898632249991861)
+![Cyenetic Security Blog](public/default-og.jpg)
+[![Astro](https://img.shields.io/badge/Astro-FF5D01?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build)
 ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![GitHub](https://img.shields.io/github/license/satnaing/astro-paper?color=%232F3741&style=for-the-badge)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white&style=for-the-badge)](https://conventionalcommits.org)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge)](http://commitizen.github.io/cz-cli/)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+[![Security](https://img.shields.io/badge/Cybersecurity-Expert-green?style=for-the-badge)](https://www.cyenetic.com)
 
-AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro blog theme. This theme is designed and crafted based on [my personal blog](https://satnaing.dev/blog).
+Cyenetic Security Blog is a comprehensive resource for cybersecurity insights, penetration testing guides, and security best practices. This blog is maintained by **Cyenetic Solutions Ltd.**, a leading cybersecurity firm specializing in vulnerability assessment and penetration testing.
 
-Read [the blog posts](https://astro-paper.pages.dev/posts/) or check [the README Documentation Section](#-documentation) for more info.
+Explore [the blog posts](https://blog.cyenetic.com/posts/) or visit [Cyenetic's Main Site](https://www.cyenetic.com) for professional security services.
 
 ## 🔥 Features
 
-- [x] type-safe markdown
-- [x] super fast performance
-- [x] accessible (Keyboard/VoiceOver)
-- [x] responsive (mobile ~ desktops)
-- [x] SEO-friendly
-- [x] light & dark mode
-- [x] static search ([Pagefind](https://pagefind.app/))
-- [x] draft posts & pagination
-- [x] sitemap & rss feed
-- [x] MDX support
-- [x] collapsible table of contents
-- [x] followed best practices
-- [x] highly customizable
-- [x] dynamic OG image generation for blog posts ([Blog Post](https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/))
-- [x] i18n ready
+- [x] Comprehensive security content covering all major pentesting areas
+- [x] Type-safe markdown for consistent content
+- [x] Lightning-fast performance (Astro static generation)
+- [x] Fully accessible (WCAG 2.1 compliant)
+- [x] Responsive design (mobile to desktop)
+- [x] SEO-optimized for search visibility
+- [x] Light & dark mode support
+- [x] Full-text search with Pagefind
+- [x] Automatic sitemap & RSS feed generation
+- [x] Social media integration (Facebook, Twitter, LinkedIn)
+- [x] Easy content management with Markdown
+- [x] Regular security updates and best practices
+- [x] Built-in call-to-actions for Cyenetic services
 
-_Note: I've tested screen-reader accessibility of AstroPaper using **VoiceOver** on Mac and **TalkBack** on Android. I couldn't test all other screen-readers out there. However, accessibility enhancements in AstroPaper should be working fine on others as well._
+This blog maintains the highest standards of accessibility and performance, ensuring readers can easily access critical security information from any device.
 
 ## ✅ Lighthouse Score
 
@@ -74,14 +71,37 @@ Inside of AstroPaper, you'll see the following folders and files:
 
 All blog posts are stored in the `src/content/posts/` directory. You can organise posts into subdirectories — the subdirectory name becomes part of the post URL.
 
-## 📖 Documentation
+## 📖 Blog Categories
 
-Documentation can be read in two formats\_ _markdown_ & _blog post_.
+The blog covers the following security disciplines:
 
-- Configuration - [markdown](src/content/posts/how-to-configure-astropaper-theme.md) | [blog post](https://astro-paper.pages.dev/posts/how-to-configure-astropaper-theme/)
-- Add Posts - [markdown](src/content/posts/adding-new-post.md) | [blog post](https://astro-paper.pages.dev/posts/adding-new-posts-in-astropaper-theme/)
-- Customize Color Schemes - [markdown](src/content/posts/customizing-astropaper-theme-color-schemes.md) | [blog post](https://astro-paper.pages.dev/posts/customizing-astropaper-theme-color-schemes/)
-- Predefined Color Schemes - [markdown](src/content/posts/predefined-color-schemes.md) | [blog post](https://astro-paper.pages.dev/posts/predefined-color-schemes/)
+- **Web Application Security** - OWASP vulnerabilities, secure coding, penetration testing
+- **API Security** - REST/GraphQL security, authentication, rate limiting, testing
+- **Mobile App Security** - Android/iOS security, data protection, SAST/DAST
+- **Network Security** - Firewalls, IDS/IPS, VPN, wireless security, infrastructure hardening
+- **DDoS Protection** - Mitigation strategies, CDN solutions, incident response
+- **Security Best Practices** - General guidelines for secure development and operations
+
+### For Contributors
+
+To add a new blog post, follow the format in `src/content/posts/`:
+
+```markdown
+---
+author: Author Name
+pubDatetime: 2026-06-11T10:00:00.000Z
+title: Security Topic
+slug: security-topic
+featured: true/false
+draft: false
+tags:
+  - Security
+  - Topic
+description: SEO description for search engines
+---
+
+Content goes here...
+```
 
 ## 💻 Tech Stack
 
@@ -98,30 +118,27 @@ Documentation can be read in two formats\_ _markdown_ & _blog post_.
 
 ## 👨🏻‍💻 Running Locally
 
-You can start using this project locally by running the following command in your desired directory:
+Clone the repository and start the development server:
 
 ```bash
-# pnpm
-pnpm create astro@latest --template satnaing/astro-paper
+# Clone the repository
+git clone https://github.com/cyenetic/cyenetic-blog.git
+cd cyenetic-blog
 
-# npm
-npm create astro@latest -- --template satnaing/astro-paper
+# Install dependencies
+npm install
 
-# yarn
-yarn create astro --template satnaing/astro-paper
-
-# bun
-bun create astro@latest -- --template satnaing/astro-paper
+# Start development server
+npm run dev
 ```
 
-Then start the project by running the following commands:
+The blog will be available at `http://localhost:3000`
+
+To build for production:
 
 ```bash
-# install dependencies if you haven't done so in the previous step.
-pnpm install
-
-# start running the project
-pnpm dev
+npm run build
+npm run preview
 ```
 
 ## Google Site Verification (optional)
@@ -153,14 +170,37 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm sync`      | Generates TypeScript types for all Astro modules. [Learn more](https://docs.astro.build/en/reference/cli-reference/#astro-sync). |
 | `pnpm astro ...` | Run CLI commands like `astro add`, `astro check`                                                                                 |
 
-## ✨ Feedback & Suggestions
+## 📧 Contact & Support
 
-If you have any suggestions/feedback, you can contact me via [my email](mailto:satnaingdev+astropaper@gmail.com). Alternatively, feel free to open an issue if you find bugs or want to request new features.
+For questions, feedback, or business inquiries:
+
+- **Email**: info@cyenetic.com
+- **Website**: https://www.cyenetic.com
+- **LinkedIn**: https://www.linkedin.com/company/cyenetic/
+- **Twitter**: https://x.com/cyenetic
+- **Facebook**: https://www.facebook.com/cyenetic
+
+## 📞 Cybersecurity Services
+
+Cyenetic Solutions Ltd. provides professional cybersecurity services:
+
+- **Vulnerability Assessment & Penetration Testing (VAPT)**
+- **Web Application Security Testing**
+- **Mobile App Security Assessment**
+- **Network Penetration Testing**
+- **API Security Testing**
+- **DDoS Protection & Mitigation**
+- **Security Consultation**
+
+Visit [Cyenetic Solutions](https://www.cyenetic.com) for more information.
 
 ## 📜 License
 
-Licensed under the MIT License, Copyright © 2026
+Licensed under the MIT License, Copyright © 2026 Cyenetic Solutions Ltd.
 
 ---
 
-Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contributors](https://github.com/satnaing/astro-paper/graphs/contributors).
+Built with ❤️ by [Cyenetic Solutions Ltd.](https://www.cyenetic.com) | Security, Kinetic.
+
+**Blog URL**: https://blog.cyenetic.com/  
+**Main Website**: https://www.cyenetic.com

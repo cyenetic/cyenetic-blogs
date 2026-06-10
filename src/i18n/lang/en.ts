@@ -39,19 +39,19 @@ export default {
   },
   pages: {
     tagTitle: "Tag",
-    tagDesc: "All the articles with the tag",
+    tagDesc: "All security articles with this tag",
 
     tagsTitle: "Tags",
-    tagsDesc: "All the tags used in posts.",
+    tagsDesc: "All topics covered in our security blog.",
 
     postsTitle: "Posts",
-    postsDesc: "All the articles I've posted.",
+    postsDesc: "Security insights and pentesting guides from Cyenetic Solutions.",
 
     archivesTitle: "Archives",
-    archivesDesc: "All the articles I've archived.",
+    archivesDesc: "Browse archived security articles.",
 
     searchTitle: "Search",
-    searchDesc: "Search any article ...",
+    searchDesc: "Search our security knowledge base ...",
   },
   a11y: {
     skipToContent: "Skip to content",

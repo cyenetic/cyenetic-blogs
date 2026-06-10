@@ -35,7 +35,11 @@
   "engines": {
     "node": ">=22.12.0"
   },
-  "name": "astro-paper-v6",
+  "name": "cyenetic-security-blog",
+  "description": "Cyenetic Security Blog - Expert cybersecurity insights and penetration testing guides",
+  "author": "Cyenetic Solutions Ltd.",
+  "license": "MIT",
+  "version": "1.0.0",
   "scripts": {
     "astro": "astro",
     "build": "astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
