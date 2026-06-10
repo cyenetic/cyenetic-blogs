@@ -21,18 +21,21 @@ Distributed Denial-of-Service (DDoS) attacks can cripple digital infrastructure.
 ### Attack Categories
 
 **Volume-Based Attacks**
+
 - UDP floods: Overwhelm with User Datagram Protocol packets
 - DNS amplification: Use DNS servers to amplify traffic
 - NTP reflection: Exploit Network Time Protocol servers
 - ICMP floods: Saturate bandwidth with ping requests
 
 **Protocol-Based Attacks**
+
 - SYN floods: Exploit TCP handshake
 - Fragmented packet attacks: Send fragmented packets
 - Ping of death: Oversized ICMP packets
 - Smurf attacks: ICMP spoofing to broadcast addresses
 
 **Application-Based Attacks**
+
 - HTTP floods: High-volume HTTP requests
 - Slowloris: Keep connections open as long as possible
 - DNS query floods: Overwhelm DNS servers
@@ -78,10 +81,10 @@ server {
 def validate_request(request):
     if len(request.data) > MAX_SIZE:
         return error("Request too large")
-    
+
     if request.rate_limit_exceeded():
         return error("Rate limit exceeded")
-    
+
     return process_request(request)
 ```
 
@@ -106,12 +109,14 @@ Content Delivery Networks provide built-in DDoS protection.
 ### CDN Benefits
 
 **Distributed Infrastructure**
+
 - Traffic distributed across multiple data centers
 - Absorbs attacks at edge
 - Reduces impact on origin server
 - Geographic redundancy
 
 **Built-in Protection**
+
 - DDoS detection and mitigation
 - WAF (Web Application Firewall)
 - Rate limiting
@@ -141,18 +146,21 @@ Content Delivery Networks provide built-in DDoS protection.
 ### Identifying DDoS Patterns
 
 **Volume Analysis:**
+
 ```
 Normal traffic: 1000 requests/minute
 Attack traffic: 100,000 requests/minute
 ```
 
 **Source Analysis:**
+
 ```
 Normal: Requests from diverse IPs
 Attack: Requests from botnet IPs (similar patterns)
 ```
 
 **Behavioral Analysis:**
+
 ```
 Normal: Mix of read/write operations
 Attack: Repetitive, similar requests
@@ -170,29 +178,34 @@ Attack: Repetitive, similar requests
 ### DDoS Response Plan
 
 **1. Detection**
+
 - Automated alerts on traffic anomalies
 - Manual confirmation of attack
 - Assess attack type and size
 
 **2. Mitigation Activation**
+
 - Enable DDoS protection mechanisms
 - Notify stakeholders
 - Increase monitoring
 - Prepare escalation procedures
 
 **3. Mitigation Execution**
+
 - Rate limiting activation
 - IP blocking
 - Geographic filtering
 - Traffic scrubbing
 
 **4. Communication**
+
 - Update status page
 - Notify customers
 - Keep stakeholders informed
 - Document response actions
 
 **5. Recovery**
+
 - Monitor for attack continuation
 - Gradually relax protections
 - Return to normal operations
@@ -213,6 +226,7 @@ WAF protects against application-level attacks.
 ### WAF Rules
 
 **Rate Limiting:**
+
 ```
 - 100 requests per minute per IP
 - 10 failed logins per 5 minutes
@@ -220,6 +234,7 @@ WAF protects against application-level attacks.
 ```
 
 **Pattern Matching:**
+
 ```
 - SQL injection patterns
 - XSS patterns
@@ -228,6 +243,7 @@ WAF protects against application-level attacks.
 ```
 
 **Bot Detection:**
+
 ```
 - Unusual user agents
 - Missing HTTP headers
@@ -240,6 +256,7 @@ WAF protects against application-level attacks.
 ### Bandwidth Considerations
 
 **Calculate Required Capacity:**
+
 ```
 Normal Peak: 500 Mbps
 DDoS Protection Buffer: 5x
@@ -247,6 +264,7 @@ Required Capacity: 2.5 Gbps
 ```
 
 **Cost Optimization:**
+
 - Use cloud-based DDoS protection
 - Negotiate with ISP for attack mitigation
 - Implement tiered response procedures
@@ -257,6 +275,7 @@ Required Capacity: 2.5 Gbps
 ### Authorized Testing Only
 
 **Legal Considerations:**
+
 - Only test systems you own or have written authorization
 - Inform ISPs and hosting providers
 - Coordinate with legal team
@@ -279,11 +298,13 @@ Required Capacity: 2.5 Gbps
 ## Compliance & Best Practices
 
 **Standards:**
+
 - PCI DSS: Payment systems protection
 - NIST: Incident response framework
 - ISO 27001: Availability requirements
 
 **Best Practices:**
+
 - Regular DDoS testing
 - Updated incident response plans
 - Stakeholder awareness training

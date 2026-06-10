@@ -50,6 +50,5 @@
     "preview": "astro preview",
     "sync": "astro sync"
   },
-  "type": "module",
-  "version": "6.1.0"
+  "type": "module"
 }

@@ -161,14 +161,14 @@ export default defineAstroPaperConfig({
 
 All commands are run from the root of the project, from a terminal:
 
-| Command          | Action                                                                                                                           |
-| :--------------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| `pnpm install`   | Installs dependencies                                                                                                            |
-| `pnpm dev`       | Starts local dev server at `localhost:4321`                                                                                      |
-| `pnpm build`     | Type-checks, builds the site, runs Pagefind indexing, and copies the index to `public/pagefind/`                                 |
-| `pnpm preview`   | Preview your build locally, before deploying                                                                                     |
-| `pnpm sync`      | Generates TypeScript types for all Astro modules. [Learn more](https://docs.astro.build/en/reference/cli-reference/#astro-sync). |
-| `pnpm astro ...` | Run CLI commands like `astro add`, `astro check`                                                                                 |
+| Command           | Action                                                                                                                           |
+| :---------------- | :------------------------------------------------------------------------------------------------------------------------------- |
+| `npm install`     | Installs dependencies                                                                                                            |
+| `npm run dev`     | Starts local dev server at `localhost:4321`                                                                                      |
+| `npm run build`   | Type-checks, builds the site, runs Pagefind indexing, and copies the index to `public/pagefind/`                                 |
+| `npm run preview` | Preview your build locally, before deploying                                                                                     |
+| `npm run sync`    | Generates TypeScript types for all Astro modules. [Learn more](https://docs.astro.build/en/reference/cli-reference/#astro-sync). |
+| `npx astro ...`   | Run CLI commands like `astro add`, `astro check`                                                                                 |
 
 ## 📧 Contact & Support
 

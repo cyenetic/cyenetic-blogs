@@ -33,16 +33,19 @@ Modern networks require multiple layers of security:
 Proper segmentation limits the impact of breaches:
 
 **DMZ (Demilitarized Zone)**
+
 - Separates internet-facing systems from internal networks
 - Hosts web servers, email servers, DNS
 - Strictly controlled access to internal networks
 
 **VLAN Segmentation**
+
 - Separates departments and security zones
 - Finance, HR, Development in different VLANs
 - Reduces lateral movement opportunity
 
 **Microsegmentation**
+
 - Granular network boundaries
 - Server-to-server segmentation
 - Zero-trust network architecture
@@ -75,12 +78,14 @@ Action: Allow
 Best practice: Deny all traffic by default, then allow specific traffic:
 
 **Bad Practice:**
+
 ```
 Allow all traffic
 Deny sensitive ports
 ```
 
 **Good Practice:**
+
 ```
 Deny all traffic (default)
 Allow only required services
@@ -93,6 +98,7 @@ Allow only required services
 ### Testing Firewall Rules
 
 **Port Scanning:**
+
 ```bash
 # Identify open ports
 nmap -p 1-65535 target.com
@@ -102,6 +108,7 @@ nmap -sV -p 1-65535 target.com
 ```
 
 **Rule Verification:**
+
 - Test allowed ports are accessible
 - Verify denied ports are blocked
 - Check for unintended access
@@ -116,6 +123,7 @@ IDS/IPS systems monitor for malicious activity.
 Passive monitoring that alerts on suspicious traffic:
 
 **Detection Methods:**
+
 - **Signature-based**: Matches known attack patterns
 - **Anomaly-based**: Detects deviation from normal behavior
 - **Behavior-based**: Identifies suspicious patterns
@@ -125,6 +133,7 @@ Passive monitoring that alerts on suspicious traffic:
 Active system that blocks malicious traffic:
 
 **Capabilities:**
+
 - Drops malicious packets
 - Terminates suspicious connections
 - Rate limiting
@@ -133,6 +142,7 @@ Active system that blocks malicious traffic:
 ### Testing IDS/IPS
 
 **Signature Testing:**
+
 ```bash
 # Test with known attack signatures
 curl "http://target.com/index.php?id=1' OR '1'='1"
@@ -145,6 +155,7 @@ curl "http://target.com/index.php?id=1' OR '1'='1"
 ```
 
 **Evasion Testing:**
+
 - Test IDS evasion techniques
 - Verify IPS blocks actual attacks
 - Check for false positives/negatives
@@ -170,15 +181,18 @@ openssl verify -CAfile ca.pem cert.pem
 ### TLS Configuration Best Practices
 
 **Enabled Protocols:**
+
 - TLS 1.3 (preferred)
 - TLS 1.2
 
 **Disabled Protocols:**
+
 - SSLv3 (deprecated)
 - TLSv1.0 (deprecated)
 - TLSv1.1 (deprecated)
 
 **Strong Ciphers:**
+
 ```
 - ECDHE-RSA-AES256-GCM-SHA384
 - ECDHE-ECDSA-AES256-GCM-SHA384
@@ -226,6 +240,7 @@ Wireless networks face unique threats.
 ### Wi-Fi Security
 
 **WPA2/WPA3 Configuration:**
+
 - Use WPA3 when possible (WPA2 minimum)
 - Disable WEP and WPA (legacy)
 - Use strong Pre-Shared Key (PSK)
@@ -233,6 +248,7 @@ Wireless networks face unique threats.
 - Regular firmware updates
 
 **Enterprise Wi-Fi:**
+
 - Use 802.1X with EAP
 - Implement certificate-based auth
 - Separate authentication server
@@ -263,11 +279,13 @@ Effective monitoring detects and deters attacks.
 ### Log Analysis
 
 **Tools:**
+
 - Splunk: Log management and analysis
 - ELK Stack: Elasticsearch, Logstash, Kibana
 - Graylog: Log aggregation
 
 **Queries:**
+
 ```
 - Failed authentication attempts by user
 - Unusual outbound traffic
@@ -282,17 +300,20 @@ Comprehensive testing of network security:
 ### External Testing
 
 **Phase 1: Reconnaissance**
+
 - DNS enumeration
 - Whois lookups
 - Port scanning
 - OS fingerprinting
 
 **Phase 2: Scanning**
+
 - Detailed port enumeration
 - Service version identification
 - Vulnerability scanning
 
 **Phase 3: Exploitation**
+
 - Attempt known vulnerabilities
 - Manual exploitation
 - Privilege escalation

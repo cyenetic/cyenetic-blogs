@@ -50,7 +50,7 @@ const isActive = (path: string) => {
   >
     <a
       href={getRelativeLocaleUrl(locale, "")}
-      class="absolute py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none flex items-center gap-2"
+      class="absolute flex items-center gap-2 py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none"
     >
       {
         logo && (
@@ -58,13 +58,13 @@ const isActive = (path: string) => {
             <img
               src={logo.light}
               alt={site.title}
-              class="h-8 dark:hidden sm:h-10"
+              class="h-8 sm:h-10 dark:hidden"
               loading="lazy"
             />
             <img
               src={logo.dark}
               alt={site.title}
-              class="hidden h-8 dark:block sm:h-10"
+              class="hidden h-8 sm:h-10 dark:block"
               loading="lazy"
             />
           </>

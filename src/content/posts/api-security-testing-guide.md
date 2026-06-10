@@ -19,30 +19,36 @@ APIs are the backbone of modern applications, but they're also a prime target fo
 ## Types of API Vulnerabilities
 
 ### Authentication Issues
+
 APIs must properly validate and authenticate requests.
 
 **Common Problems:**
+
 - Missing or weak API key validation
 - JWT signature verification bypassed
 - OAuth token expiration not properly enforced
 - No client authentication in sensitive endpoints
 
 **Testing Approach:**
+
 - Attempt requests without credentials
 - Use expired tokens
 - Modify token claims
 - Test token refresh mechanisms
 
 ### Authorization Flaws
+
 Authentication alone isn't enough—proper authorization controls are essential.
 
 **Authorization Weaknesses:**
+
 - Broken access control (BAC)
 - Horizontal privilege escalation (accessing other users' data)
 - Vertical privilege escalation (accessing admin functions)
 - Missing permission checks
 
 **Testing Strategy:**
+
 - Test with different user roles
 - Attempt to access other users' resources
 - Test privilege escalation scenarios
@@ -53,6 +59,7 @@ Authentication alone isn't enough—proper authorization controls are essential.
 APIs frequently expose sensitive data unintentionally.
 
 **Common Issues:**
+
 - Exposing internal IDs that reveal structure
 - Returning unnecessary sensitive information
 - Missing field-level access control
@@ -63,6 +70,7 @@ APIs frequently expose sensitive data unintentionally.
 Without proper rate limiting, APIs are vulnerable to abuse.
 
 **Testing Methods:**
+
 - Send rapid requests to test rate limit effectiveness
 - Attempt to bypass rate limiting using different IPs
 - Test account lockout mechanisms
@@ -75,6 +83,7 @@ REST APIs have specific security considerations due to their stateless nature.
 ### Testing REST Endpoints
 
 **Base Endpoint Security:**
+
 ```
 GET /api/v1/users          - List all users
 GET /api/v1/users/{id}     - Get specific user
@@ -84,6 +93,7 @@ DELETE /api/v1/users/{id}  - Delete user
 ```
 
 **Testing Checklist:**
+
 1. Test all HTTP methods (GET, POST, PUT, PATCH, DELETE)
 2. Verify proper HTTP status codes (401, 403, 404, etc.)
 3. Test request parameter tampering
@@ -100,6 +110,7 @@ REST APIs accept parameters in multiple locations:
 - Body: JSON/XML payloads
 
 **Testing Approach:**
+
 - Modify parameters to access unauthorized resources
 - Test type mismatches and boundary conditions
 - Attempt SQL injection in parameters
@@ -110,6 +121,7 @@ REST APIs accept parameters in multiple locations:
 Large datasets are returned using pagination.
 
 **Security Concerns:**
+
 - Information disclosure through page enumeration
 - Race conditions in pagination
 - Ability to retrieve all records bypassing pagination
@@ -147,6 +159,7 @@ Attackers can craft deeply nested queries to exhaust resources.
 ```
 
 **Mitigation:**
+
 - Implement query depth limiting
 - Use query cost analysis
 - Set execution timeouts
@@ -155,6 +168,7 @@ Attackers can craft deeply nested queries to exhaust resources.
 GraphQL introspection can reveal API schema.
 
 **Testing:**
+
 - Query GraphQL schema using introspection
 - Look for sensitive fields in the schema
 - Test field-level access control
@@ -163,6 +177,7 @@ GraphQL introspection can reveal API schema.
 GraphQL endpoints may have different auth than REST.
 
 **Testing Approach:**
+
 - Test each GraphQL query for authentication
 - Attempt mutations without proper permissions
 - Test batch operations
@@ -170,6 +185,7 @@ GraphQL endpoints may have different auth than REST.
 ## Testing Tools & Techniques
 
 ### API Testing Tools
+
 - **Postman**: REST API testing and automation
 - **Burp Suite**: Comprehensive API security testing
 - **OWASP ZAP**: Open-source vulnerability scanner
@@ -217,6 +233,7 @@ GET /api/v1/users/123        - Get user by ID
 Proper API documentation should include security requirements.
 
 **Document:**
+
 - Required authentication methods
 - Rate limits and quotas
 - Required headers and parameters

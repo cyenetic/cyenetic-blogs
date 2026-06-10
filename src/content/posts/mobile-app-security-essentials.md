@@ -33,6 +33,7 @@ Protecting sensitive data on the device is critical.
 ### Android Data Storage
 
 **Avoid These Practices:**
+
 ```java
 // ❌ Don't store sensitive data in SharedPreferences unencrypted
 SharedPreferences prefs = context.getSharedPreferences("settings", MODE_PRIVATE);
@@ -45,6 +46,7 @@ File file = new File(context.getFilesDir(), "secrets.txt");
 **Secure Approaches:**
 
 **1. Android EncryptedSharedPreferences (Recommended)**
+
 ```java
 // ✅ Use encrypted SharedPreferences
 EncryptedSharedPreferences preferences = EncryptedSharedPreferences.create(
@@ -57,6 +59,7 @@ EncryptedSharedPreferences preferences = EncryptedSharedPreferences.create(
 ```
 
 **2. Android Keystore System**
+
 ```java
 // ✅ Use Android Keystore for cryptographic operations
 KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
@@ -66,6 +69,7 @@ KeyProperties.PURPOSE_ENCRYPT | KeyProperties.PURPOSE_DECRYPT;
 ```
 
 **3. File Encryption**
+
 ```java
 // ✅ Encrypt files before storage
 File encryptedFile = EncryptedFile.Builder(
@@ -81,6 +85,7 @@ File encryptedFile = EncryptedFile.Builder(
 **Secure Storage Options:**
 
 **1. Keychain (Most Secure)**
+
 ```swift
 // ✅ Store sensitive data in Keychain
 let query: [String: Any] = [
@@ -92,6 +97,7 @@ SecItemAdd(query as CFDictionary, nil)
 ```
 
 **2. Data Protection**
+
 ```swift
 // ✅ Use FileManager with data protection
 try data.write(
@@ -101,6 +107,7 @@ try data.write(
 ```
 
 **3. Avoid These:**
+
 ```swift
 // ❌ Don't store in UserDefaults unencrypted
 UserDefaults.standard.set(password, forKey: "password")
@@ -118,6 +125,7 @@ Mobile apps communicate with servers over networks that may be compromised.
 Prevent man-in-the-middle attacks by pinning certificates:
 
 **Android:**
+
 ```java
 // ✅ Implement certificate pinning
 NetworkSecurityConfig config = new NetworkSecurityConfig.Builder()
@@ -128,6 +136,7 @@ NetworkSecurityConfig config = new NetworkSecurityConfig.Builder()
 ```
 
 **iOS:**
+
 ```swift
 // ✅ Implement certificate pinning
 class CertificatePinning: NSObject, URLSessionDelegate {
@@ -153,6 +162,7 @@ class CertificatePinning: NSObject, URLSessionDelegate {
 ### Secure Authentication
 
 **Best Practices:**
+
 - Use OAuth 2.0 / OpenID Connect
 - Don't store user credentials on device
 - Implement biometric authentication
@@ -171,11 +181,13 @@ class CertificatePinning: NSObject, URLSessionDelegate {
 ### Static Analysis (SAST)
 
 **Android:**
+
 - **Android Lint**: Built-in security checks
 - **MobSF**: Mobile Security Framework
 - **Qark**: Quick Android Review Kit
 
 **iOS:**
+
 - **LLVM Static Analyzer**: Built-in
 - **Clang Static Analyzer**
 - **Swiftlint**: Code style and security checks
@@ -183,11 +195,13 @@ class CertificatePinning: NSObject, URLSessionDelegate {
 ### Dynamic Analysis (DAST)
 
 **Android:**
+
 - **Frida**: Dynamic instrumentation
 - **Burp Suite**: Proxy testing
 - **Android Studio Debugger**: Runtime analysis
 
 **iOS:**
+
 - **Burp Suite**: Proxy intercept
 - **Charles Proxy**: Network analysis
 - **LLDB Debugger**: Runtime debugging
@@ -195,12 +209,14 @@ class CertificatePinning: NSObject, URLSessionDelegate {
 ### Reverse Engineering Considerations
 
 **Android:**
+
 - Code can be decompiled using tools like apktool
 - Sensitive logic should be offloaded to servers
 - Consider code obfuscation
 - Implement integrity checks
 
 **iOS:**
+
 - Compiled code is harder to reverse than Android
 - Still vulnerable to runtime analysis
 - Use obfuscation tools
@@ -209,12 +225,14 @@ class CertificatePinning: NSObject, URLSessionDelegate {
 ## Secure Development Practices
 
 ### Dependency Management
+
 - Keep frameworks and libraries updated
 - Review third-party library security
 - Minimize dependencies
 - Monitor for known vulnerabilities
 
 ### Code Security
+
 - Implement input validation
 - Use parameterized queries (prevent SQL injection)
 - Avoid hardcoding secrets
@@ -222,6 +240,7 @@ class CertificatePinning: NSObject, URLSessionDelegate {
 - Implement proper error handling
 
 ### Testing Strategy
+
 1. **Unit Tests**: Security of individual components
 2. **Integration Tests**: Security of component interactions
 3. **Penetration Testing**: Professional security assessment
@@ -230,21 +249,25 @@ class CertificatePinning: NSObject, URLSessionDelegate {
 ## Common Mobile Vulnerabilities
 
 ### Insecure Data Storage
+
 - Sensitive data stored unencrypted
 - Exposed API keys and tokens
 - Unencrypted database files
 
 ### Broken Cryptography
+
 - Using weak encryption algorithms
 - Hardcoded encryption keys
 - Insecure random number generation
 
 ### Improper Platform Usage
+
 - Misuse of platform features
 - Missing keychain usage (iOS)
 - Improper permission handling
 
 ### Insecure Communication
+
 - No SSL/TLS validation
 - Missing certificate pinning
 - Logging sensitive data

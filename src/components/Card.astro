@@ -22,23 +22,25 @@ const postUrl = getPostUrl(id, filePath, Astro.currentLocale);
       "group block overflow-hidden rounded-lg transition-transform hover:scale-105",
     ]}
   >
-    {coverImage && (
-      <div class="mb-4 aspect-video overflow-hidden rounded-lg bg-muted">
-        {typeof coverImage === "string" ? (
-          <img
-            src={coverImage}
-            alt={title}
-            class="h-full w-full object-cover"
-          />
-        ) : (
-          <Image
-            src={coverImage}
-            alt={title}
-            class="h-full w-full object-cover"
-          />
-        )}
-      </div>
-    )}
+    {
+      coverImage && (
+        <div class="bg-muted mb-4 aspect-video overflow-hidden rounded-lg">
+          {typeof coverImage === "string" ? (
+            <img
+              src={coverImage}
+              alt={title}
+              class="h-full w-full object-cover"
+            />
+          ) : (
+            <Image
+              src={coverImage}
+              alt={title}
+              class="h-full w-full object-cover"
+            />
+          )}
+        </div>
+      )
+    }
   </a>
   <a
     href={postUrl}

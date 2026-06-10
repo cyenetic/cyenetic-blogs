@@ -45,7 +45,8 @@ export default {
     tagsDesc: "All topics covered in our security blog.",
 
     postsTitle: "Posts",
-    postsDesc: "Security insights and pentesting guides from Cyenetic Solutions.",
+    postsDesc:
+      "Security insights and pentesting guides from Cyenetic Solutions.",
 
     archivesTitle: "Archives",
     archivesDesc: "Browse archived security articles.",
