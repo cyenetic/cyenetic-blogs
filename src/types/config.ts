@@ -126,7 +126,7 @@ type ResolvedSiteConfig = Required<
     | "ogImage"
   >
 > &
-  Pick<SiteConfig, "profile" | "googleVerification">;
+  Pick<SiteConfig, "profile" | "googleVerification" | "aboutUrl">;
 
 export interface ResolvedAstroPaperConfig {
   site: ResolvedSiteConfig;
