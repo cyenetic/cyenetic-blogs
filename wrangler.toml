@@ -1,6 +1,6 @@
-name = "cyenetic-security-blog"
+name = "cyenetic-blogs"
 type = "javascript"
 compatibility_date = "2025-01-01"
 
 [env.production]
-name = "cyenetic-security-blog"
+name = "cyenetic-blogs"
