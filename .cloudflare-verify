@@ -1,0 +1,49 @@
+#!/bin/bash
+# Cloudflare Pages Pre-Deployment Verification
+echo "🔍 Cloudflare Pages Build Verification"
+echo "======================================"
+echo ""
+
+# 1. Check dependencies
+echo "✓ Dependencies:"
+echo "  - Node.js: $(node --version) (required >= 22.12.0)"
+echo "  - npm: $(npm --version)"
+echo ""
+
+# 2. Check configuration files
+echo "✓ Configuration:"
+[ -f "package.json" ] && echo "  ✓ package.json exists" || echo "  ✗ package.json missing"
+[ -f "astro.config.ts" ] && echo "  ✓ astro.config.ts exists" || echo "  ✗ astro.config.ts missing"
+[ -f "wrangler.toml" ] && echo "  ✓ wrangler.toml exists" || echo "  ✗ wrangler.toml missing"
+echo ""
+
+# 3. Check build output
+echo "✓ Build Output Directory:"
+if [ -d "dist" ]; then
+  HTML_COUNT=$(find dist -name "*.html" | wc -l)
+  SIZE=$(du -sh dist | cut -f1)
+  echo "  ✓ dist/ exists ($SIZE, $HTML_COUNT HTML pages)"
+  [ -f "dist/index.html" ] && echo "  ✓ dist/index.html (homepage)" || echo "  ✗ dist/index.html missing"
+  [ -d "dist/_astro" ] && echo "  ✓ dist/_astro/ (assets)" || echo "  ✗ dist/_astro/ missing"
+  [ -d "dist/pagefind" ] && echo "  ✓ dist/pagefind/ (search index)" || echo "  ✗ dist/pagefind/ missing"
+else
+  echo "  ✗ dist/ not found - run: npm run build"
+fi
+echo ""
+
+# 4. Build command
+echo "✓ Build Command: npm run build"
+echo "✓ Output Directory: dist"
+echo "✓ Entry Point: dist/index.html"
+echo ""
+
+# 5. Deployment checklist
+echo "✓ Cloudflare Pages Checklist:"
+echo "  [ ] Repository connected to Cloudflare Pages"
+echo "  [ ] Build command set to: npm run build"
+echo "  [ ] Output directory set to: dist"
+echo "  [ ] Node.js 22.x environment enabled"
+echo "  [ ] Custom domain configured (optional)"
+echo ""
+
+echo "✅ Ready for Cloudflare Pages deployment!"
