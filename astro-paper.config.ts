@@ -7,10 +7,15 @@ export default defineAstroPaperConfig({
     description: "Security insights, penetration testing guides, and cybersecurity best practices from Cyenetic Solutions Ltd.",
     author: "Cyenetic Solutions Ltd.",
     profile: "https://www.cyenetic.com",
+    aboutUrl: "https://www.cyenetic.com/about",
     ogImage: "default-og.jpg",
     lang: "en",
     timezone: "Asia/Dhaka",
     dir: "ltr",
+  },
+  logo: {
+    light: "https://www.cyenetic.com/cyenetic-logo-with-text-in-light-mode.png",
+    dark: "https://www.cyenetic.com/cyenetic-logo-with-text-in-dark-mode.png",
   },
   posts: {
     perPage: 4,
