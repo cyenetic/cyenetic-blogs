@@ -1,5 +1,6 @@
 ---
 import config from "@/config";
 
-return Astro.redirect(config.site.aboutUrl || "https://www.cyenetic.com/about");
+const { site } = config;
+return Astro.redirect(site.aboutUrl || "https://www.cyenetic.com/about");
 ---
