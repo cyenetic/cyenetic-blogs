@@ -16,8 +16,10 @@ const posts = defineCollection({
       featured: z.boolean().optional(),
       draft: z.boolean().optional(),
       tags: z.array(z.string()).default(["others"]),
-      ogImage: image().or(z.string()).optional(),
-      coverImage: image().or(z.string()).optional(),
+      // Allow strings (including missing/broken paths) or imported images
+      // Strings are treated as-is; missing files won't break the build
+      ogImage: z.string().optional(),
+      coverImage: z.string().or(image()).optional(),
       description: z.string(),
       canonicalURL: z.string().optional(),
       hideEditPost: z.boolean().optional(),
